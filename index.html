@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Harubayan</title>
+  <link rel="icon" type="image/png" href="img/logo-harubayan.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      font-family: 'Poppins', sans-serif;
+      color: #9b001e;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #9b001e;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .enter-btn {
+      background-color: #bb0e42;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .enter-btn:hover {
+      background-color: #fcdde1;
+      color: #bb0e42;
+      box-shadow: 0 0 25px rgba(255, 192, 203, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sakura Animation */
+    .sakura {
+      position: fixed;
+      top: -50px;
+      width: 25px;
+      height: 25px;
+      background-image: url('img/sakura.png'); /* Make sure this exists */
+      background-size: cover;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Harubayan</h1>
+    <p>Bringing the heart of Japan to every Filipino plate — one authentic bite at a time.</p>
+    <button class="enter-btn" onclick="window.location.href='harubayan.html'">Enter Site</button>
+  </div>
+
+  <!-- Sakura Petals -->
+  <script>
+    const totalPetals = 25;
+    for (let i = 0; i < totalPetals; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('sakura');
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      petal.style.animationDelay = (Math.random() * 5) + "s";
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
